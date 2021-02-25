@@ -1,0 +1,79 @@
+html, body {
+  background: #202020;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat-Regular', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, span {
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -10px;
+  margin-right: -10px;
+}
+
+.container {
+  box-sizing: border-box;
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.container .separator {
+  display: flex;
+}
+.container .separator .side {
+  margin: 0 10px;
+  width: 210px;
+}
+.container .separator .column {
+  width: 100%;
+}
+.container .separator .column .banner {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+.container .separator .column main {
+  width: calc((100% / 12 * 6) - 20px);
+}
+.container .separator .column .card-spacer {
+  width: calc((100% / 12 * 6) - 20px);
+  margin: 0 10px;
+  background: green;
+}
+.container .separator .column .card-container {
+  width: calc((100% / 12 * 5) - 20px);
+  height: 350px;
+  margin: 0 10px;
+  background: #2DEED3;
+}
+.container .separator .column .item {
+  width: calc((100% / 12 * 3) - 20px);
+  margin: 0 10px;
+  background: gray;
+}
+
+@media screen and (max-width: 1500px) {
+  .container .separator .column .card-spacer {
+    width: calc((100% / 12 * 5) - 20px);
+  }
+  .container .separator .column .card-container {
+    width: calc(100% / 12 * 6 - 20px);
+  }
+}
+@media screen and (max-width: 920px) {
+  .container .separator .column .card-spacer {
+    display: none;
+    width: 0px;
+  }
+  .container .separator .column .card-container {
+    width: calc(100% / 12 * 12 - 20px);
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -55,6 +55,7 @@ $margin: 10px;
         margin: 0 $margin;
 
         .float-card{
+          z-index: 1;
           box-sizing: border-box;
           position: absolute;
           display: flex;
@@ -65,17 +66,15 @@ $margin: 10px;
           width: 533px;
           height: 296px;
           padding: 20px;
-
-          background: #ffffff;
+          background: rgb(255, 255, 255);
           box-shadow: 0 5px 10px rgba(0,0,0,.7);
-
+          // transition: .3s;
           border-radius: 8px;
-          transition: .1s;
           &:hover{
             box-shadow: 0 25px 50px rgba(0,0,0,.7);
+
           }
           .head{
-            transition: .1s;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -94,8 +93,6 @@ $margin: 10px;
             }
           }
           .links{
-            transition: .1s;
-            
             display: flex;
             flex-grow: 2;
             a{
@@ -127,6 +124,7 @@ $margin: 10px;
           }
         }
         .undercard{
+          z-index: 0;
           margin-top: 25px;
           margin-left: 25px;
           height: 296px;

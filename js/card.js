@@ -20,16 +20,19 @@ document.onmousemove = handleMouseMove;
               (doc && doc.clientTop  || body && body.clientTop  || 0 );
         }
         elem = document.getElementById("float-card");
-        elemText = document.getElementById("head");
-        elemLinks = document.getElementById("links");
+        elemUnder = document.getElementById("undercard");
 
-        elem.style.transform = "translate("+ ( (event.pageX-window.innerWidth/2)/50 )+"px, "+ ( (event.pageY-window.innerHeight/2)/50 ) +"px)";
-        elemText.style.transform = "translate("+ ( (event.pageX-window.innerWidth/2)/100 )+"px, "+ ( (event.pageY-window.innerHeight/2)/100 ) +"px)";
-        elemLinks.style.transform = "translate("+ ( (event.pageX-window.innerWidth/2)/200 )+"px, "+ ( (event.pageY-window.innerHeight/2)/200 ) +"px)";
+
+
+        elemUnder.style.transform = `perspective(500px) rotateX(${ - (elemUnder.offsetTop + elemUnder.offsetHeight / 2 - event.pageY)/25}deg) rotateY(${ (elemUnder.offsetLeft + elemUnder.offsetWidth / 2 - event.pageX) / 25}deg)`
         if($("#float-card").is(':hover')){
-          elem.style.transform = "translate("+ ( (event.pageX-window.innerWidth/2)/10 )+"px, "+ ( (event.pageY-window.innerHeight/2)/10 ) +"px)";
-          elemText.style.transform = "translate("+ ( (event.pageX-window.innerWidth/2)/10 )+"px, "+ ( (event.pageY-window.innerHeight/2)/10 ) +"px)";
-          elemLinks.style.transform = "translate("+ ( (event.pageX-window.innerWidth/2)/20 )+"px, "+ ( (event.pageY-window.innerHeight/2)/20 ) +"px)";
+          elem.style.transition = "0s";
+          elem.style.transform = `perspective(1000px) rotateX(${ - (elem.offsetTop + elem.offsetHeight / 2 - event.pageY)/25}deg) rotateY(${ (elem.offsetLeft + elem.offsetWidth / 2 - event.pageX) / 25}deg)`
+          elem.style.boxShadow = `0 ${(elem.offsetTop + elem.offsetHeight - event.pageY)/10}px ${(elem.offsetTop + elem.offsetHeight - event.pageY)/5}px rgba(0,0,0,.7)`
+        }else {
+          elem.style.transition = ".3s";
+          elem.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`
+          elem.style.boxShadow = "0 5px 10px rgba(0,0,0,.7)"
         }
 
 

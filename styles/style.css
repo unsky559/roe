@@ -54,6 +54,7 @@ h1, h2, h3, h4, h5, h6, p, span {
   margin: 0 10px;
 }
 .container .separator .column .card-container .float-card {
+  z-index: 1;
   box-sizing: border-box;
   position: absolute;
   display: flex;
@@ -63,16 +64,14 @@ h1, h2, h3, h4, h5, h6, p, span {
   width: 533px;
   height: 296px;
   padding: 20px;
-  background: #ffffff;
+  background: white;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.7);
   border-radius: 8px;
-  transition: .1s;
 }
 .container .separator .column .card-container .float-card:hover {
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
 }
 .container .separator .column .card-container .float-card .head {
-  transition: .1s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -90,7 +89,6 @@ h1, h2, h3, h4, h5, h6, p, span {
   font-size: 18pt;
 }
 .container .separator .column .card-container .float-card .links {
-  transition: .1s;
   display: flex;
   flex-grow: 2;
 }
@@ -121,6 +119,7 @@ h1, h2, h3, h4, h5, h6, p, span {
   color: #000000;
 }
 .container .separator .column .card-container .undercard {
+  z-index: 0;
   margin-top: 25px;
   margin-left: 25px;
   height: 296px;

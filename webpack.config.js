@@ -3,15 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
 	entry: './src/index.ts',
-	module: {
-		rules: [
-			{
-				test: /\.tsx?$/,
-				use: 'ts-loader',
-				exclude: /node_modules/,
-			}
-		]
-	},
 	resolve: {
 		extensions: ['.tsx', '.ts', '.js'],
 	},
@@ -23,5 +14,22 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			title: 'roe'
 		})
-	]
+	],
+  module: {
+		rules: [
+			{
+				test: /\.tsx?$/,
+				use: 'ts-loader',
+				exclude: /node_modules/,
+			},
+      {
+        test: /\.s[ac]ss$/i,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
+      }
+		]
+	},
 };

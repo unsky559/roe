@@ -18,5 +18,16 @@ npm i
 For build project use 
 ```
 npm run build
+```
+```
 npm run build:prod
+```
+### Dev server
+To run dev server use
+```
+npm run serve
+```
+**Slow:** *Use only if you want to see production results of build*
+```
+npm run serve:prod
 ```

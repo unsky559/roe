@@ -22,6 +22,7 @@ npm run build
 ```
 npm run build:prod
 ```
+*All files that ready for deploy will stored at ```./dist``` folder*
 ### Dev server
 To run dev server use
 ```

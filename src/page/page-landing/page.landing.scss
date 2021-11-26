@@ -13,7 +13,9 @@ body{
 #bannerMain{
   .banner-main-foreground{
     width: 100%;
-    height: 100vh;
+    max-width: 1950px;
+    margin: 0 auto;
+    min-height: max(100vh, 800px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,7 +62,7 @@ body{
             bottom: 10px;
             content: "";
             position: absolute;
-            height: 15px;
+            height: 7px;
             width: 100%;
             background: $color-coral;
             z-index: 0;
@@ -88,5 +90,70 @@ body{
   margin-top: -$border-size;
   &:first-child{
     margin-left: 0;
+  }
+}
+
+
+#aboutMe{
+  width: 100%;
+  min-height: max(100vh, 800px);
+  max-width: 1950px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  .container{
+    margin: 0 auto;
+    width: calc(100% / 10 * 8);
+  }
+
+  .centerBlock{
+    .row{
+      display: flex;
+    }
+    .title{
+      @include border();
+      border-bottom: 0;
+      padding: 35px;
+      .name{
+        @include font_h2();
+        color: $color-yellow;
+      }
+    }
+
+    .photo{
+      @include border();
+      border-right: 0;
+      width: calc(100% / 8 * 3);
+      background: red;
+    }
+    .column{
+      width: 100%;
+    }
+    .aboutMe{
+      width: 100%;
+      background: $color-yellow;
+      padding: 30px;
+      .heading{
+        @include font_h2();
+        color: $color-dark-purple;
+        margin-bottom: 20px;
+      }
+      p{
+        @include font_p();
+        color: $color-dark-purple;
+      }
+    }
+    .summary{
+      width: calc(100%/5*3);
+      @include border();
+      padding: 30px;
+      p{
+        @include font_p();
+        color: $color-yellow;
+        margin-bottom: 10px;
+      }
+    }
+
   }
 }

@@ -7,6 +7,10 @@ Personal portfolio website
 
 Actual version of design available here https://www.figma.com/file/bd938PWfOUdPXp1KGurCUu/Portfolio-website?node-id=0%3A1
 
+## Development and build
+
+See https://github.com/unsky559/roe/wiki/Development-and-build
+
 ## Wiki
 All instructions about installing, contributing, naming and so on are moved into a wiki pages:
 see https://github.com/unsky559/roe/wiki

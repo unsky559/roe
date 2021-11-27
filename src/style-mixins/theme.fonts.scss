@@ -1,0 +1,26 @@
+@mixin mainFont(){
+  font-family: 'Russo One', sans-serif;
+}
+@mixin secondaryFont(){
+  font-family: 'Prosto One', cursive;
+}
+@mixin font_banner(){
+  @include mainFont();
+  font-weight: 400;
+  font-size: 72px;
+}
+@mixin font_h1(){
+  @include mainFont();
+  font-weight: 400;
+  font-size: 36px;
+}
+@mixin font_h2(){
+  @include secondaryFont();
+  font-weight: 400;
+  font-size: 24px;
+}
+@mixin font_p(){
+  @include secondaryFont();
+  font-weight: 400;
+  font-size: 18px;
+}

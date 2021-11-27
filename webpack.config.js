@@ -12,8 +12,9 @@ module.exports = {
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			title: 'roe'
-		})
+			  title: 'roe',
+        template: "index.html",
+    })
 	],
   module: {
 		rules: [

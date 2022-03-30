@@ -21,8 +21,18 @@ export default function App() {
                     {/* A <Switch> looks through its children <Route>s and
                         renders the first one that matches the current URL. */}
                     <Switch>
-                        <Route path="/">
+                        <Route path="/" exact>
                             <PageLanding />
+                        </Route>
+                        <Route path="/lol">
+                            <div className="container">
+                                <h1>Lol</h1>
+                            </div>
+                        </Route>
+                        <Route path="*">
+                            <div className="container">
+                                <h1>404</h1>
+                            </div>
                         </Route>
                     </Switch>
                 </div>

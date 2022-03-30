@@ -11,6 +11,10 @@ import { PageLanding } from './page/page-landing/page.landing';
 import './shared/shared-styles/style.container.scss';
 import './shared/shared-styles/style.reset.scss';
 import './shared/shared-styles/default/ALL.scss';
+import PageBlog from './page/page-blog/page.blog';
+import PageAbout from './page/page-about/page.about';
+import PageContacts from './page/page-contacts/page.contacts';
+import Page404 from './page/page-404/page.404';
 
 export default function App() {
     return (
@@ -24,15 +28,17 @@ export default function App() {
                         <Route path="/" exact>
                             <PageLanding />
                         </Route>
-                        <Route path="/lol">
-                            <div className="container">
-                                <h1>Lol</h1>
-                            </div>
+                        <Route path="/blog">
+                            <PageBlog />
+                        </Route>
+                        <Route path="/about">
+                            <PageAbout />
+                        </Route>
+                        <Route path="/contacts">
+                            <PageContacts />
                         </Route>
                         <Route path="*">
-                            <div className="container">
-                                <h1>404</h1>
-                            </div>
+                            <Page404 />
                         </Route>
                     </Switch>
                 </div>

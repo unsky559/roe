@@ -5,3 +5,7 @@ h1{
     @include font_h1();
     color: $color-dark-purple;
 }
+
+h2{
+    @include font_h2();
+}

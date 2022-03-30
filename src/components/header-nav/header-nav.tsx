@@ -6,7 +6,6 @@ export default function HeaderNav(){
     return (
         <nav className="header-nav">
             <ul>
-                <HeaderNavLink label="Home" to="/"></HeaderNavLink>
                 <HeaderNavLink label="Blog" to="/blog"></HeaderNavLink>
                 <HeaderNavLink label="About me" to="/about"></HeaderNavLink>
                 <HeaderNavLink label="Contacts" to="/contacts"></HeaderNavLink>

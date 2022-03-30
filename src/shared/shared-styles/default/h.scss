@@ -1,0 +1,7 @@
+@import "../../../style-mixins/theme.colors.scss";
+@import "../../../style-mixins/theme.fonts.scss";
+
+h1{
+    @include font_h1();
+    color: $color-dark-purple;
+}

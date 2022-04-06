@@ -2,6 +2,26 @@
 @import "src/style-mixins/mixin.border";
 @import "src/style-mixins/theme.fonts";
 
-*{
-  box-sizing: border-box;
+.page-landing{
+  .banner-type{
+    height: calc(100vh - 80px);
+    background-color: $color-purple;
+    .container{
+      height: calc(100% - 80px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    h1{
+      color: #fff;
+    }
+    .btn-links{
+      margin-top: 20px;
+      *{
+        margin-left: 7px;
+        margin-right: 7px;
+      }
+    }
+  }
 }

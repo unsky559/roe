@@ -8,7 +8,6 @@ export default function HeaderNav(){
             <ul>
                 <HeaderNavLink label="Blog" to="/blog"></HeaderNavLink>
                 <HeaderNavLink label="About me" to="/about"></HeaderNavLink>
-                <HeaderNavLink label="Contacts" to="/contacts"></HeaderNavLink>
             </ul>
         </nav>
     );

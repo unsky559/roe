@@ -1,0 +1,26 @@
+.page-about{
+    .container{
+        padding-top: 20px;
+        display: flex;
+        .avatar{
+            width: 80%;
+            border-radius: 50%;
+        }
+        .left-block{
+            width: calc(100% / 12 * 3);
+        }
+        .main{
+            width: calc(100% / 12 * 9);
+            p{
+                margin-top: 15px;
+                margin-bottom: 15px;
+                
+            }
+            .linklist{
+                a{
+                    margin-inline-end: 10px;
+                }
+            }
+        }
+    }
+}

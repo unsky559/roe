@@ -1,0 +1,34 @@
+@import "src/style-mixins/theme.colors";
+@import "src/style-mixins/theme.fonts";
+
+.page-blog{
+    .search-area{
+        padding: 30px;
+        background-color: $color-yellow;
+        .container{
+            display: flex;
+            align-items: stretch;
+        }
+        .searchbar{
+            @include font_p();
+            padding: 15px 25px;
+            border-radius: 25px 0 0 25px;
+            border: none;
+            width: 100%;
+            & + button{
+                @include font_p();
+                border-radius: 0 25px 25px 0;
+                padding: 15px 25px;
+                background-color: $color-purple;
+                color: #fff;
+                border: none;
+            }
+        }
+    }
+    .articles{
+        padding-top: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        
+    }
+}

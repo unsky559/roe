@@ -1,0 +1,10 @@
+@import "src/style-mixins/theme.colors";
+@import "src/style-mixins/theme.fonts";
+.btn{
+    @include font_p();
+    padding: 15px 20px;
+    background-color: $color-yellow;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}

@@ -1,5 +1,5 @@
 @mixin mainFont(){
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Jura', sans-serif;
 }
 @mixin font_banner(){
   @include mainFont();
@@ -8,16 +8,16 @@
 }
 @mixin font_h1(){
   @include mainFont();
-  font-weight: 400;
-  font-size: 36px;
+  font-weight: 700;
+  font-size: 24px;
 }
 @mixin font_h2(){
   @include mainFont();
-  font-weight: 400;
+  font-weight: 500;
   font-size: 24px;
 }
 @mixin font_p(){
   @include mainFont();
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
 }

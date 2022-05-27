@@ -1,17 +1,30 @@
 @import "src/style-mixins/theme.colors";
+@import "src/style-mixins/theme.border-radius";
+
 .logo{
   .goog{
     $goog_font-size: 12px;
     $goog_font-weight: 2px;
     $goog_spacing: 15px;
+    $goog_color: $color-text-negative;
+    $goog_bg: $color-main-interactive;
     width: calc(#{$goog_spacing * 2 + $goog_font-size} * 4);
     overflow: clip;
     display: flex;
-    background-color: $color-main-interactive;
+    background-color: $goog_bg;
     padding: $goog_spacing 0;
-    border-radius: 5px;
-    box-shadow: -5px -5px 50px rgba(0,0,0,.6);
+    border-radius: $border-radius-default;
+    //box-shadow: -5px -5px 50px rgba(0,0,0,.6);
     transition: 0.8s width;
+    position: relative;
+    .hidden-title{
+      width: 100%;
+      top: 0;
+      position: absolute;
+      opacity: 0;
+      margin: 0;
+      height: 100%;
+    }
     & > *{
       width: $goog_font-size;
       height: $goog_font-size;
@@ -25,7 +38,7 @@
     .lineStyle{
       position: absolute;
       border-radius: $goog_font-weight / 2;
-      background-color: #ffffff;
+      background-color: $goog_color;
     }
     .horizontalLine{
       width: $goog_font-size;

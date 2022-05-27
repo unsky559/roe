@@ -5,6 +5,7 @@ const Logo = () => {
     return (
         <div className="logo">
             <div className="goog">
+                <h1 className="hidden-title">goog</h1>
                 <div className="g">
                     <div></div>
                     <div></div>

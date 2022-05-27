@@ -1,5 +1,7 @@
 @import "../../../style-mixins/theme.fonts.scss";
 
 p{
-    @include font_p();
+  @include font_p();
+  margin-top: 20px;
+  margin-bottom: 20px;
 }

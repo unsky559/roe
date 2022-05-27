@@ -2,25 +2,26 @@ import * as React from 'react';
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
   } from 'react-router-dom';
 import Header from './components/header/header';
 import { PageLanding } from './page/page-landing/page.landing';
+import PageBlog from './page/page-blog/page.blog';
+import PageAbout from './page/page-about/page.about';
+import Page404 from './page/page-404/page.404';
+import Footer from "./components/footer/footer";
 
 import './shared/shared-styles/style.container.scss';
 import './shared/shared-styles/style.reset.scss';
 import './shared/shared-styles/default/ALL.scss';
-import PageBlog from './page/page-blog/page.blog';
-import PageAbout from './page/page-about/page.about';
-import Page404 from './page/page-404/page.404';
+import PageArticle from "./page/page-article/page-article";
 
 export default function App() {
     return (
         <>
             <Router>
                 <Header/>
-                <div>
+                <main>
                     {/* A <Switch> looks through its children <Route>s and
                         renders the first one that matches the current URL. */}
                     <Switch>
@@ -33,11 +34,15 @@ export default function App() {
                         <Route path="/about">
                             <PageAbout />
                         </Route>
+                        <Route path="/article">
+                            <PageArticle />
+                        </Route>
                         <Route path="*">
                             <Page404 />
                         </Route>
                     </Switch>
-                </div>
+                </main>
+                <Footer/>
             </Router>
         </>
         

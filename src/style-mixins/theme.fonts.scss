@@ -1,6 +1,9 @@
 @mixin mainFont(){
   font-family: 'Jura', sans-serif;
 }
+@mixin codeFont(){
+  font-family: 'Roboto Mono', monospace;
+}
 @mixin font_banner(){
   @include mainFont();
   font-weight: 400;
@@ -20,4 +23,15 @@
   @include mainFont();
   font-weight: 400;
   font-size: 20px;
+}
+@mixin font_small-content(){
+  @include mainFont();
+  font-weight: 300;
+  font-size: 16px;
+}
+
+@mixin font_code-default(){
+  @include codeFont();
+  font-size: 16px;
+  font-weight: 400;
 }

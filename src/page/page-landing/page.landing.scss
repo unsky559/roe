@@ -4,14 +4,16 @@
 
 .page-landing{
   .banner-type{
-    height: calc(100vh - 80px);
-    background-color: $color-purple;
+    background-color: $color-contrast-interactive;
+    color: $color-text-negative;
+    padding: 45px;
     .container{
-      height: calc(100% - 80px);
       display: flex;
-      align-items: center;
       justify-content: center;
       flex-direction: column;
+      .col{
+        width: calc(100% / 12 * 5);
+      }
     }
     h1{
       color: #fff;

@@ -4,7 +4,7 @@
 .page-blog{
     .search-area{
         padding: 30px;
-        background-color: $color-yellow;
+        background-color: $color-secondary-accent;
         .container{
             display: flex;
             align-items: stretch;
@@ -19,7 +19,7 @@
                 @include font_p();
                 border-radius: 0 25px 25px 0;
                 padding: 15px 25px;
-                background-color: $color-purple;
+                background-color: $color-main-interactive;
                 color: #fff;
                 border: none;
             }

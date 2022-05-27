@@ -1,5 +1,5 @@
 @import "theme.colors";
 $border-size: 2px;
 @mixin border {
-  border: $border-size solid $color-yellow;
+  border: $border-size solid $color-secondary-accent;
 }

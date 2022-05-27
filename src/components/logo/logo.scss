@@ -1,0 +1,103 @@
+@import "src/style-mixins/theme.colors";
+@import "src/style-mixins/theme.border-radius";
+
+.logo{
+  .goog{
+    $goog_font-size: 12px;
+    $goog_font-weight: 2px;
+    $goog_spacing: 15px;
+    $goog_color: $color-text-negative;
+    $goog_bg: $color-main-interactive;
+    width: calc(#{$goog_spacing * 2 + $goog_font-size} * 4);
+    overflow: clip;
+    display: flex;
+    background-color: $goog_bg;
+    padding: $goog_spacing 0;
+    border-radius: $border-radius-default;
+    //box-shadow: -5px -5px 50px rgba(0,0,0,.6);
+    transition: 0.8s width;
+    position: relative;
+    .hidden-title{
+      width: 100%;
+      top: 0;
+      position: absolute;
+      opacity: 0;
+      margin: 0;
+      height: 100%;
+    }
+    & > *{
+      width: $goog_font-size;
+      height: $goog_font-size;
+      margin-left: $goog_spacing;
+      margin-right: $goog_spacing;
+    }
+    .letterContainer{
+      position: relative;
+      min-width: $goog_font-size;
+    }
+    .lineStyle{
+      position: absolute;
+      border-radius: $goog_font-weight / 2;
+      background-color: $goog_color;
+    }
+    .horizontalLine{
+      width: $goog_font-size;
+      height: $goog_font-weight;
+    }
+    .verticalLine{
+      width: $goog_font-weight;
+      height: $goog_font-size;
+    }
+    .g{
+      @extend .letterContainer;
+      & *:nth-child(1){
+        @extend .lineStyle;
+        @extend .horizontalLine;
+      }
+      & *:nth-child(2){
+        @extend .lineStyle;
+        @extend .verticalLine;
+      }
+      & *:nth-child(3){
+        @extend .lineStyle;
+        @extend .horizontalLine;
+        bottom: 0;
+      }
+      & *:nth-child(4){
+        @extend .lineStyle;
+        width: $goog_font-size/3;
+        height: $goog_font-weight;
+        right: 0;
+        bottom: $goog_font-size / 2 - $goog_font-weight;
+      }
+      & *:nth-child(5){
+        @extend .lineStyle;
+        width: $goog_font-weight;
+        height: $goog_font-size/2;
+        right: 0;
+        bottom: 0;
+      }
+    }
+    .o{
+      @extend .letterContainer;
+      & *:nth-child(1){
+        @extend .lineStyle;
+        @extend .horizontalLine;
+      }
+      & *:nth-child(2){
+        @extend .lineStyle;
+        @extend .verticalLine;
+      }
+      & *:nth-child(3){
+        @extend .lineStyle;
+        @extend .horizontalLine;
+        bottom: 0;
+      }
+      & *:nth-child(4){
+        @extend .lineStyle;
+        @extend .verticalLine;
+        right: 0;
+      }
+    }
+  }
+}

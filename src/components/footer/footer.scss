@@ -1,0 +1,6 @@
+@import "src/style-mixins/theme.colors";
+
+.footer{
+  background-color: $color-secondary-transparent;
+  padding: 45px 0;
+}

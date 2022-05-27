@@ -1,11 +1,17 @@
-@import "../../../style-mixins/theme.colors.scss";
-@import "../../../style-mixins/theme.fonts.scss";
+@import "./src/style-mixins/theme.colors";
+@import "./src/style-mixins/theme.fonts";
+@import "./src/style-mixins/theme.spacing";
 
 h1{
-    @include font_h1();
-    color: $color-dark-purple;
+  @include font_h1();
+  color: $color-dark-purple;
+  margin-top: $spacing-default;
+  margin-bottom: $spacing-default;
 }
 
-h2{
-    @include font_h2();
+h2,h3,h4{
+  @include font_h2();
+  color: $colot-text-positive;
+  margin-top: $spacing-default;
+  margin-bottom: $spacing-default;
 }

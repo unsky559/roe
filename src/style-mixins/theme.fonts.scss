@@ -1,5 +1,8 @@
 @mixin mainFont(){
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Jura', sans-serif;
+}
+@mixin codeFont(){
+  font-family: 'Roboto Mono', monospace;
 }
 @mixin font_banner(){
   @include mainFont();
@@ -8,16 +11,27 @@
 }
 @mixin font_h1(){
   @include mainFont();
-  font-weight: 400;
-  font-size: 36px;
+  font-weight: 700;
+  font-size: 24px;
 }
 @mixin font_h2(){
   @include mainFont();
-  font-weight: 400;
+  font-weight: 500;
   font-size: 24px;
 }
 @mixin font_p(){
   @include mainFont();
   font-weight: 400;
-  font-size: 18px;
+  font-size: 20px;
+}
+@mixin font_small-content(){
+  @include mainFont();
+  font-weight: 300;
+  font-size: 16px;
+}
+
+@mixin font_code-default(){
+  @include codeFont();
+  font-size: 16px;
+  font-weight: 400;
 }

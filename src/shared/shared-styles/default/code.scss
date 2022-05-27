@@ -1,0 +1,10 @@
+@import "./src/style-mixins/theme.fonts";
+@import "./src/style-mixins/theme.colors";
+@import "./src/style-mixins/theme.border-radius";
+@import "./src/style-mixins/theme.spacing";
+code{
+  @include font_code-default();
+  padding: $spacing-default/5 $spacing-default/2;
+  border-radius: $border-radius-default;
+  background-color: $color-secondary-transparent;
+}

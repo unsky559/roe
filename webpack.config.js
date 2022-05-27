@@ -14,7 +14,7 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			  title: 'roe',
         template: "index.html",
-    })
+    }),
 	],
   module: {
 		rules: [
@@ -30,7 +30,18 @@ module.exports = {
           'css-loader',
           'sass-loader'
         ]
-      }
+      },
+        {
+            test: /\.(png|jpe?g|gif|svg)$/i,
+            use: [
+                {
+                    loader: 'file-loader',
+                    options: {
+                        name: 'res/[name].[ext]',
+                    },
+                },
+            ],
+        },
 		]
 	},
   devServer: {

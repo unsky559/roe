@@ -1,0 +1,18 @@
+@import "src/style-mixins/theme.colors";
+@import "src/style-mixins/theme.fonts";
+@import "src/style-mixins/theme.border-radius";
+
+
+.article-preview{
+  padding: 40px;
+  background-color: $color-main-interactive;
+  color: $color-text-negative;
+  border-radius: $border-radius-default;
+  margin-bottom: 20px;
+  &_date{
+    @include font_small-content();
+  }
+  &_title{
+    @include font_h2();
+  }
+}

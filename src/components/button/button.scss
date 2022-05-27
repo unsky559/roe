@@ -1,10 +1,18 @@
 @import "src/style-mixins/theme.colors";
 @import "src/style-mixins/theme.fonts";
+@import "src/style-mixins/theme.border-radius";
+@import "src/style-mixins/theme.spacing";
 .btn{
     @include font_p();
-    padding: 15px 20px;
-    background-color: $color-yellow;
-    border-radius: 25px;
+  display: flex;
+  justify-content: center;
+    padding: $spacing-default/2;
+    color: $color-text-negative;
+    background-color: $color-main-interactive;
+    border-radius: $border-radius-default;
     border: none;
     cursor: pointer;
+    &_icon{
+      margin-right: $spacing-default/2;
+    }
 }

@@ -1,0 +1,20 @@
+@import "./src/style-mixins/theme.fonts";
+@import "./src/style-mixins/theme.spacing";
+@import "./src/style-mixins/theme.border-radius";
+@import "./src/style-mixins/theme.colors";
+.code-fragment{
+  margin-top: $spacing-default;
+  margin-bottom: $spacing-default;
+  .code{
+    @include font_code-default();
+    padding: $spacing-default;
+    border-radius: $border-radius-default;
+    background-color: $color-secondary-transparent;
+    &.tabbed{
+      border-top-left-radius: 0;
+    }
+    .tab{
+      margin-inline-start: 2rem;
+    }
+  }
+}

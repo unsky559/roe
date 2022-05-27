@@ -1,0 +1,22 @@
+@import "./src/style-mixins/theme.fonts";
+@import "./src/style-mixins/theme.spacing";
+@import "./src/style-mixins/theme.border-radius";
+@import "./src/style-mixins/theme.colors";
+.codeIcon{
+  display: inline-flex;
+  align-items: center;
+  padding: $spacing-default/4;
+  background-color: $color-secondary-transparent;
+  border-radius: $border-radius-default;
+  &.tabbed{
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  img{
+    margin-inline-end: $spacing-default/4;
+  }
+  span{
+    @include mainFont();
+    font-size: 14px;
+  }
+}

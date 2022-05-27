@@ -1,10 +1,16 @@
 import * as React from "react";
 import "./button.scss";
 
-export default function Button(props: any) {
-    //TODO: add props type
+type propsType = {
+    iconURL?: string,
+    children?: string
+}
+type stateType = {}
+
+export default function Button(props: propsType) {
     return (
         <button className="btn">
+            {props.iconURL ? <img className="btn_icon" src={props.iconURL} alt="icon" /> : <></>}
             {props.children}
         </button>
     );

@@ -6,6 +6,7 @@ import EditorComponent from "../../components/editor-component/editor-component"
 import {componentTypes} from "../../components/editor-component/componentTypes";
 import {chunkType} from "../../components/editor-component/chunkType";
 import {ButtonVariants} from "../../components/button/buttonVariants";
+import dateToString from "../../shared/modules/dateToString";
 
 const PageArticleEditor = () => {
     const [titleState, updateTitleState] = useState("Your awesome title");
@@ -85,7 +86,7 @@ const PageArticleEditor = () => {
                         onChange={event => updateTitleState(event.target.value)}
                     />
                     <div className="spacing">
-                        <time className="article_date">13:22 Apr 13, 2022 {timeState}</time>
+                        <time className="article_date">{dateToString(timeState)}</time>
                     </div>
                     <div className="article_row-share">
                         <div className="article_author author">

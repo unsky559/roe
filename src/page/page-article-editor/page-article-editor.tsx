@@ -1,12 +1,10 @@
 import * as React from "react";
-import {useEffect, useRef, useState} from "react";
+import {useState} from "react";
 import "./page-article-editor.scss";
 import Button from "../../components/button/button";
 import EditorComponent from "../../components/editor-component/editor-component";
 import {componentTypes} from "../../components/editor-component/componentTypes";
-import EditorFormatter from "../../components/editor-formatter/editor-formatter";
-import {editorFormatterButtons} from "../../components/editor-formatter/editor-formatter-buttonsTpees";
-import Select from "../../shared/modules/select";
+import {chunkType} from "../../components/editor-component/chunkType";
 
 const PageArticleEditor = () => {
     const [titleState, updateTitleState] = useState("Your awesome title");
@@ -62,7 +60,15 @@ const PageArticleEditor = () => {
 
     const [articleState, updateArticleState] = useState([]);
 
-    const removeChunk = (chunk: any) => {
+    const newChunk = (type: componentTypes, value: string = "Input here"): chunkType => {
+        return {
+            type,
+            key: Math.random(),
+            val: value
+        };
+    }
+
+    const removeChunk = (chunk: chunkType):void => {
         updateArticleState(articleState.filter((element) => element !== chunk));
     }
 
@@ -95,33 +101,21 @@ const PageArticleEditor = () => {
                 <div className="article-editor_controls">
                     <button className="btnEditor" onClick={() => {
                         updateArticleState((prev) => {
-                            return prev.concat({
-                                type: componentTypes.HEADER,
-                                key: Math.random(),
-                                val: "test",
-                            });
+                            return prev.concat(newChunk(componentTypes.HEADER));
                         });
                     }}>
                         Header 1
                     </button>
                     <button className="btnEditor" onClick={() => {
                         updateArticleState((prev) => {
-                            return prev.concat({
-                                type: componentTypes.PARAGRAPH,
-                                key: Math.random(),
-                                val: "test",
-                            });
+                            return prev.concat(newChunk(componentTypes.PARAGRAPH));
                         });
                     }}>
                         Paragraph
                     </button>
                     <button className="btnEditor" onClick={() => {
                         updateArticleState((prev) => {
-                            return prev.concat({
-                                type: componentTypes.HEADER_COUNTER,
-                                key: Math.random(),
-                                val: "test"
-                            })
+                            return prev.concat(newChunk(componentTypes.HEADER_COUNTER));
                         })
                     }}>
                         Counter header
@@ -139,9 +133,8 @@ const PageArticleEditor = () => {
                             return (
                                 <EditorComponent
                                     key={art.key}
-                                    componentType={art.type}
-                                    val={art.val}
-                                    removeCallBack={removeChunk.bind(null, art)}
+                                    chunk={art}
+                                    removeCallback={removeChunk}
                                     onChange={(e: React.FormEvent<any>) => {
                                         handleEditorChange(index, e)
                                     }
@@ -153,7 +146,6 @@ const PageArticleEditor = () => {
                     }
 
                 </div>
-
 
 
             </div>

@@ -1,13 +1,15 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {componentTypes} from "./componentTypes";
 import "./editor-component.scss";
+import {chunkType} from "./chunkType";
+import {Simulate} from "react-dom/test-utils";
+import change = Simulate.change;
 
 type propsType = {
-    componentType: componentTypes,
     className?: string,
     onChange: React.FormEventHandler<HTMLHeadingElement>
-    val?: string,
-    removeCallBack: any
+    chunk: chunkType
+    removeCallback: (chunk:chunkType) => void
 }
 type stateType = {}
 
@@ -16,8 +18,8 @@ const EditorComponent = (props: propsType) => {
     const componentRef = useRef(null);
 
     useEffect(() => {
-        if(props.val){
-            componentRef.current.innerText = props.val;
+        if(props.chunk.val){
+            componentRef.current.innerText = props.chunk.val;
         }
     }, []);
 
@@ -29,7 +31,7 @@ const EditorComponent = (props: propsType) => {
     }
 
     function Cmp(){
-        switch (props.componentType) {
+        switch (props.chunk.type) {
             case componentTypes.HEADER:
                 return <h3 {...componentProps} />;
             case componentTypes.PARAGRAPH:
@@ -45,7 +47,7 @@ const EditorComponent = (props: propsType) => {
     return (
        <div className="editor-component">
            <div className="sideControls">
-               <button onClick={props.removeCallBack}>Remove</button>
+               <button onClick={props.removeCallback.bind(null, props.chunk)}>Remove</button>
            </div>
            {Cmp()}
        </div>

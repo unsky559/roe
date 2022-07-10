@@ -5,6 +5,7 @@ import Button from "../../components/button/button";
 import EditorComponent from "../../components/editor-component/editor-component";
 import {componentTypes} from "../../components/editor-component/componentTypes";
 import {chunkType} from "../../components/editor-component/chunkType";
+import {ButtonVariants} from "../../components/button/buttonVariants";
 
 const PageArticleEditor = () => {
     const [titleState, updateTitleState] = useState("Your awesome title");
@@ -99,32 +100,36 @@ const PageArticleEditor = () => {
                     </div>
                 </div>
                 <div className="article-editor_controls">
-                    <button className="btnEditor" onClick={() => {
-                        updateArticleState((prev) => {
-                            return prev.concat(newChunk(componentTypes.HEADER));
-                        });
-                    }}>
-                        Header 1
-                    </button>
-                    <button className="btnEditor" onClick={() => {
-                        updateArticleState((prev) => {
-                            return prev.concat(newChunk(componentTypes.PARAGRAPH));
-                        });
-                    }}>
-                        Paragraph
-                    </button>
-                    <button className="btnEditor" onClick={() => {
-                        updateArticleState((prev) => {
-                            return prev.concat(newChunk(componentTypes.HEADER_COUNTER));
-                        })
-                    }}>
-                        Counter header
-                    </button>
-                    <button className="btnEditor" onClick={() => {
-                        console.log(articleState);
-                    }}>
-                        get state
-                    </button>
+                    <Button variant={ButtonVariants.EDITOR}
+                            onClick={() => {
+                                updateArticleState((prev) => {
+                                    return prev.concat(newChunk(componentTypes.HEADER_COUNTER));
+                                });
+                            }}>
+                        H3 counter
+                    </Button>
+                    <Button variant={ButtonVariants.EDITOR}
+                            onClick={() => {
+                                updateArticleState((prev) => {
+                                    return prev.concat(newChunk(componentTypes.HEADER));
+                                });
+                            }}>
+                        H3
+                    </Button>
+                    <Button variant={ButtonVariants.EDITOR}
+                            onClick={() => {
+                            updateArticleState((prev) => {
+                                return prev.concat(newChunk(componentTypes.PARAGRAPH));
+                            });
+                        }}>
+                        p
+                    </Button>
+
+                    {/*<button className="btn-editor" onClick={() => {*/}
+                    {/*    console.log(articleState);*/}
+                    {/*}}>*/}
+                    {/*    get state*/}
+                    {/*</button>*/}
                 </div>
                 <div className="article-editor_edit">
                     {

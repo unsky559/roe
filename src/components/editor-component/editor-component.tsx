@@ -1,9 +1,9 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {componentTypes} from "./componentTypes";
 import "./editor-component.scss";
 import {chunkType} from "./chunkType";
-import {Simulate} from "react-dom/test-utils";
-import change = Simulate.change;
+import Button from "../button/button";
+import {ButtonVariants} from "../button/buttonVariants";
 
 type propsType = {
     className?: string,
@@ -47,7 +47,9 @@ const EditorComponent = (props: propsType) => {
     return (
        <div className="editor-component">
            <div className="sideControls">
-               <button onClick={props.removeCallback.bind(null, props.chunk)}>Remove</button>
+               <Button variant={ButtonVariants.SECONDARY} onClick={props.removeCallback.bind(null, props.chunk)}>
+                   Remove
+               </Button>
            </div>
            {Cmp()}
        </div>

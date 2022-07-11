@@ -1,0 +1,25 @@
+@import "src/style-mixins/theme.animation";
+
+.editor-component{
+  .sideControls{
+    position: absolute;
+
+    opacity: 0;
+    transform: translateX(-100%);
+
+    transition-property: transform, opacity;
+    transition-duration: $animation-time-fast;
+    &:hover{
+      opacity: 1 !important;
+    }
+  }
+  &:hover .sideControls{
+    opacity: 0.5;
+
+    transform: translateX(-110%);
+
+    transition-property: transform, opacity;
+    transition-duration: $animation-time-middle;
+    transition-timing-function: $animation-timing-function;
+  }
+}

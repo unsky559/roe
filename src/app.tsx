@@ -15,6 +15,7 @@ import './shared/shared-styles/style.container.scss';
 import './shared/shared-styles/style.reset.scss';
 import './shared/shared-styles/default/ALL.scss';
 import PageArticle from "./page/page-article/page-article";
+import PageArticleEditor from "./page/page-article-editor/page-article-editor";
 
 export default function App() {
     return (
@@ -36,6 +37,9 @@ export default function App() {
                         </Route>
                         <Route path="/article">
                             <PageArticle />
+                        </Route>
+                        <Route path="/editor">
+                            <PageArticleEditor />
                         </Route>
                         <Route path="*">
                             <Page404 />

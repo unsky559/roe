@@ -4,6 +4,7 @@ import "./editor-component.scss";
 import {chunkType} from "./chunkType";
 import Button from "../button/button";
 import {ButtonVariants} from "../button/buttonVariants";
+import ChunkImage from "./chunks/chunk-image/chunk-image";
 
 type propsType = {
     className?: string,
@@ -15,31 +16,67 @@ type stateType = {}
 
 const EditorComponent = (props: propsType) => {
     const classNames = props.className ? `EditorComponent ${props.className}` : "EditorComponent";
-    const componentRef = useRef(null);
 
-    useEffect(() => {
-        if(props.chunk.val){
-            componentRef.current.innerText = props.chunk.val;
-        }
-    }, []);
 
-    const componentProps = {
-        ref: componentRef,
-        onKeyUp: props.onChange,
-        className: classNames,
-        contentEditable: true
-    }
+
 
     function Cmp(){
         switch (props.chunk.type) {
-            case componentTypes.HEADER:
+            case componentTypes.HEADER:{
+                const componentRef = useRef(null);
+
+                useEffect(() => {
+                    if(props.chunk.val){
+                        componentRef.current.innerText = props.chunk.val;
+                    }
+                }, []);
+
+                const componentProps = {
+                    ref: componentRef,
+                    onKeyUp: props.onChange,
+                    className: classNames,
+                    contentEditable: true
+                }
+
                 return <h3 {...componentProps} />;
-            case componentTypes.PARAGRAPH:
+            }
+            case componentTypes.PARAGRAPH:{
+                const componentRef = useRef(null);
+
+                useEffect(() => {
+                    if(props.chunk.val){
+                        componentRef.current.innerText = props.chunk.val;
+                    }
+                }, []);
+
+                const componentProps = {
+                    ref: componentRef,
+                    onKeyUp: props.onChange,
+                    className: classNames,
+                    contentEditable: true
+                }
+
                 return <p data-selectable="true" {...componentProps} />
-            case componentTypes.HEADER_COUNTER:
+            }
+            case componentTypes.HEADER_COUNTER:{
+                const componentRef = useRef(null);
+
+                useEffect(() => {
+                    if(props.chunk.val){
+                        componentRef.current.innerText = props.chunk.val;
+                    }
+                }, []);
+
+                const componentProps = {
+                    ref: componentRef,
+                    onKeyUp: props.onChange,
+                    className: classNames,
+                    contentEditable: true
+                }
                 return <h3  {...componentProps} className="article_subtitle"/>
-            case componentTypes.CODE:
-                return <p {...componentProps} />
+            }
+            case componentTypes.IMAGE:
+                return <ChunkImage chunk={props.chunk} />
         }
     }
 

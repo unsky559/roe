@@ -125,6 +125,14 @@ const PageArticleEditor = () => {
                         }}>
                         p
                     </Button>
+                    <Button variant={ButtonVariants.EDITOR}
+                            onClick={() => {
+                                updateArticleState((prev) => {
+                                    return prev.concat(newChunk(componentTypes.IMAGE));
+                                });
+                            }}>
+                        img
+                    </Button>
 
                     {/*<button className="btn-editor" onClick={() => {*/}
                     {/*    console.log(articleState);*/}

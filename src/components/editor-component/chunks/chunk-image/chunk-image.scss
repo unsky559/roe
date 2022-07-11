@@ -1,0 +1,14 @@
+.article{
+  &_image{
+    display: flex;
+    justify-content: center;
+    &-editor{
+      .image-preview{
+
+      }
+    }
+    img{
+      max-width: 100%;
+    }
+  }
+}

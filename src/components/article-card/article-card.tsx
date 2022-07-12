@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./article-card.scss";
+import styles from "./article-card.module.scss";
 
 type propsType = {
     cardData: {
@@ -14,16 +14,16 @@ type stateType = {}
 
 export default function ArticleCard(props: propsType){
     return(
-        <div className="article-card">
-            <div className="article-card-image">
+        <div className={styles.articleCard}>
+            <div className={styles.articleCardImage}>
                 <img src={props.cardData.imgURL} alt={props.cardData.title} />
             </div>
-            <div className="article-card-content">
-                <h2 className="article-card-title">{props.cardData.title}</h2>
-                <p className="article-card-description">
+            <div className={styles.articleCardContent}>
+                <h2 className={styles.articleCardTitle}>{props.cardData.title}</h2>
+                <p className={styles.articleCardDescription}>
                     {props.cardData.previewText}
                 </p>
-                <div className="article-card-autor">
+                <div className={styles.articleCardAuthor}>
                     <a href="">@{props.cardData.author}</a>
                     <time>{props.cardData.date.toLocaleDateString()}</time>
                 </div>

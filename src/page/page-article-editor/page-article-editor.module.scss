@@ -2,12 +2,12 @@
 @import "./src/style-mixins/theme.colors";
 @import "./src/style-mixins/theme.border-radius";
 @import "./src/style-mixins/theme.spacing";
-.article{
+.articleEditor{
   counter-reset: title;
   .spacing{
     margin-bottom: $spacing-default;
   }
-  &_row-share{
+  &_rowShare{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,9 +17,11 @@
     @include font_h1();
     padding: 15px;
     color: $color-text-negative;
-    background-color: $color-main-accent;
+    background-color: $color-main-interactive;
     border-radius: $border-radius-default;
     margin-bottom: 25px;
+    border: none;
+    width: 100%;
     h1,h2,h3,h4,h5,h6{
       margin: 0;
     }
@@ -45,6 +47,14 @@
   &_date{
     @include font_small-content();
   }
+
+  &_controls{
+    margin-top: $spacing-default;
+  }
+
+  &_edit{
+  }
+
 }
 .author{
   display: flex;

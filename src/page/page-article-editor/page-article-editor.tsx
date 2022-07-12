@@ -1,6 +1,7 @@
 import * as React from "react";
 import {useState} from "react";
-import "./page-article-editor.scss";
+import styles from "./page-article-editor.module.scss";
+import container from "../../shared/shared-styles/style.container.module.scss";
 import Button from "../../components/button/button";
 import EditorComponent from "../../components/editor-component/editor-component";
 import {componentTypes} from "../../components/editor-component/componentTypes";
@@ -77,30 +78,30 @@ const PageArticleEditor = () => {
     return (
         <>
             {/*<EditorFormatter isFocus={isSelected[0]} coords={selectedCoords[0]} callback={handleEditorFormatterClick} />*/}
-            <div className="article-editor container">
-                <div className="article-editor_header">
+            <div className={styles.articleEditor +" "+ container.container}>
+                <div>
                     <input
-                        className="article-editor_title"
+                        className={styles.articleEditor_title}
                         type="text"
                         value={titleState}
                         onChange={event => updateTitleState(event.target.value)}
                     />
-                    <div className="spacing">
-                        <time className="article_date">{dateToString(timeState)}</time>
+                    <div className={styles.spacing}>
+                        <time className={styles.articleEditor_date}>{dateToString(timeState)}</time>
                     </div>
-                    <div className="article_row-share">
-                        <div className="article_author author">
-                            <div className="author_image">
+                    <div className={styles.articleEditor_rowShare}>
+                        <div className={styles.author}>
+                            <div className={styles.author_image}>
                                 <img src="https://avatars.githubusercontent.com/u/33353900?v=4" alt=""/>
                             </div>
-                            <div className="author_name">unsky559</div>
+                            <div className={styles.author_name}>unsky559</div>
                         </div>
-                        <div className="article_controls">
+                        <div className={styles.articleEditor_controls}>
                             <Button>Publish</Button>
                         </div>
                     </div>
                 </div>
-                <div className="article-editor_controls">
+                <div className={styles.articleEditor_controls}>
                     <Button variant={ButtonVariants.EDITOR}
                             onClick={() => {
                                 updateArticleState((prev) => {
@@ -140,7 +141,7 @@ const PageArticleEditor = () => {
                     {/*    get state*/}
                     {/*</button>*/}
                 </div>
-                <div className="article-editor_edit">
+                <div className={styles.articleEditor_edit}>
                     {
                         articleState.map((art, index) => {
                             // @ts-ignore

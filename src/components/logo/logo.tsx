@@ -1,30 +1,30 @@
 import * as React from "react";
-import "./logo.scss";
+import styles from "./logo.module.scss";
 
 const Logo = () => {
     return (
-        <div className="logo">
-            <div className="goog">
-                <h1 className="hidden-title">goog</h1>
-                <div className="g">
+        <div className={styles.logo}>
+            <div className={styles.goog}>
+                <h1 className={styles.hiddenTitle}>goog</h1>
+                <div className={styles.g}>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                <div className="o">
+                <div className={styles.o}>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                <div className="o">
+                <div className={styles.o}>
                     <div></div>
                     <div></div>
                     <div></div>
                     <div></div>
                 </div>
-                <div className="g">
+                <div className={styles.g}>
                     <div></div>
                     <div></div>
                     <div></div>

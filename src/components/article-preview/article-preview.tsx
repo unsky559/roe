@@ -1,11 +1,11 @@
 import * as React from "react";
-import "./article-preview.scss";
+import styles from "./article-preview.module.scss";
 
 const ArticlePreview = () => {
     return (
-        <div className="article-preview">
-            <time className="article-preview_date">Feb 13 2020</time>
-            <h3 className="article-preview_title">Title</h3>
+        <div className={styles.articlePreview}>
+            <time className={styles.articlePreviewDate}>Feb 13 2020</time>
+            <h3 className={styles.articlePreviewTitle}>Title</h3>
         </div>
     );
 };

@@ -4,11 +4,11 @@
     height: 80px;
 
     .container{
-        height: 100%;
+        height: 80px;
         display: flex;
         align-items: center;
     }
-    #home-page-link{
+    .homePageLink{
         h1{
             @include font_h2();
             text-transform: uppercase;

@@ -1,0 +1,76 @@
+@import "./src/style-mixins/theme.fonts";
+@import "./src/style-mixins/theme.colors";
+@import "./src/style-mixins/theme.border-radius";
+@import "./src/style-mixins/theme.spacing";
+.articleEditor{
+  counter-reset: title;
+  .spacing{
+    margin-bottom: $spacing-default;
+  }
+  &_rowShare{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &_title{
+    @extend .spacing;
+    @include font_h1();
+    padding: 15px;
+    color: $color-text-negative;
+    background-color: $color-main-interactive;
+    border-radius: $border-radius-default;
+    margin-bottom: 25px;
+    border: none;
+    width: 100%;
+    h1,h2,h3,h4,h5,h6{
+      margin: 0;
+    }
+  }
+  &_subtitle{
+    @include font_h1();
+    display: flex;
+    align-items: center;
+    &:before{
+      counter-increment: title;
+      content: counter(title);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      background-color: $color-main-interactive;
+      color: $color-text-negative;
+      border-radius: 50%;
+      margin-inline-end: $spacing-default;
+    }
+  }
+  &_date{
+    @include font_small-content();
+  }
+
+  &_controls{
+    margin-top: $spacing-default;
+  }
+
+  &_edit{
+  }
+
+}
+.author{
+  display: flex;
+  align-items: center;
+  &_image{
+    margin-right: $spacing-default;
+    width: 90px;
+    height: 90px;
+    img{
+      width: inherit;
+      height: inherit;
+      object-fit: cover;
+      border-radius: $border-radius-default;
+    }
+  }
+  &_name{
+    @include font_h1();
+  }
+}

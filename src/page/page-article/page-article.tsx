@@ -1,5 +1,6 @@
 import * as React from "react";
-import "./page-article.scss";
+import styles from "./page-article.module.scss";
+import container from "../../shared/shared-styles/style.container.module.scss";
 import Button from "../../components/button/button";
 import Code from "../../components/code/code";
 
@@ -14,29 +15,31 @@ const PageArticle = () => {
         title: "HTML5"
     }
     return (
-        <article className="article container">
-            <div className="article_header">
-                <div className="article_title">
+        <article className={styles.article + " " + container.container}>
+            <div>
+                <div className={styles.article_title}>
                     <h2>How to parse BigInt in JavaScript</h2>
                 </div>
-                <div className="spacing">
-                    <time className="article_date">Apr 13, 2022</time>
+                <div className={styles.spacing}>
+                    <time className={styles.article_date}>Apr 13, 2022</time>
                 </div>
-                <div className="article_row-share">
-                    <div className="article_author author">
-                        <div className="author_image">
+                <div className={styles.article_rowShare}>
+                    <div className={styles.author}>
+                        <div className={styles.author_image}>
                             <img src="https://avatars.githubusercontent.com/u/33353900?v=4" alt=""/>
                         </div>
-                        <div className="author_name">unsky559</div>
+                        <div className={styles.author_name}>unsky559</div>
                     </div>
-                    <div className="article_controls">
+                    <div>
                         <Button iconURL={shareIcon}>Share</Button>
                     </div>
                 </div>
             </div>
-            <div className="article_main">
+            <div>
                 <h3>Why you shoud care?</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam architecto atque blanditiis, earum ex harum in, incidunt itaque minima molestiae porro repellendus tempore? Aspernatur eligendi expedita nihil nisi, placeat repellendus repudiandae similique tenetur!</p>
+                {/*// TODO: move article-subtitle to separate component*/}
+                {/*{// TODO: actually all article chunks move to separate components}*/}
                 <h3 className="article_subtitle">Hello</h3>
                 <p>What are you looking for? <code>Maybe looking for some code?</code> I don`t care. Let`s do some lorem! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut error fugit id nam nihil quia quos sapiente sequi similique vitae.</p>
                 <Code icon={ihtml5}>s</Code>

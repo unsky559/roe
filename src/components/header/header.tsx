@@ -1,13 +1,14 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import './header.scss';
+import styles from './header.module.scss';
+import container from "../../shared/shared-styles/style.container.module.scss"
 import Logo from "../logo/logo";
 
 export default function Header() {
     return (
-        <header className="header">
-            <div className="container">
-                <Link to="/" id="home-page-link">
+        <header className={styles.header}>
+            <div className={container.container + " " + styles.container}>
+                <Link to="/" className={styles.homePageLink}>
                     <Logo/>
                 </Link>
             </div>

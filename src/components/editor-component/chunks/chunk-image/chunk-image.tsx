@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {chunkType} from "../../chunkType";
 import Button from "../../../button/button";
-import "./chunk-image.scss";
+import styles from "./chunk-image.module.scss";
 
 type propsType = {
     chunk: chunkType
@@ -20,8 +20,8 @@ const ChunkImage = (props: propsType) => {
     }
 
     return (
-        <div className="article_image">
-            {editState && <div className="article_image-editor">
+        <div className={styles.article_image}>
+            {editState && <div className={styles.article_imageEditor}>
                 <label htmlFor={"image-select-" + props.chunk.key}>InsertImageURL</label>
                 <input
                     onChange={(e) => {
@@ -39,7 +39,7 @@ const ChunkImage = (props: propsType) => {
                     id={"image-select-alt-" + props.chunk.key}/>
                 <br/>
                 {imageURLState &&
-                    <img className="image-preview" src={imageURLState} alt={imageALTState}/>
+                    <img className={styles.imagePreview} src={imageURLState} alt={imageALTState}/>
                 }
                 <Button onClick={saveImage}>
                     Save

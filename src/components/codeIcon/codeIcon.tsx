@@ -1,5 +1,5 @@
 import React from 'react';
-import "./codeIcon.scss";
+import styles from "./codeIcon.module.scss";
 import {iconType} from "./icon.type";
 
 type propsType = {
@@ -10,7 +10,7 @@ type stateType = {}
 
 const CodeIcon = (props: propsType) => {
     return (
-        <figure className={props.tabbed ? "codeIcon tabbed" : "codeIcon"}>
+        <figure className={props.tabbed ? (styles.codeIcon + " " + styles.tabbed) : styles.codeIcon}>
             <img src={props.icon.url} alt={props.icon.title}/>
             <span>{props.icon.title}</span>
         </figure>

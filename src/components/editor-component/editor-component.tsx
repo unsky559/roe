@@ -1,10 +1,10 @@
 import React, {useEffect, useRef} from 'react';
+import styles from "./editor-component.module.scss";
 import {componentTypes} from "./componentTypes";
-import "./editor-component.scss";
-import {chunkType} from "./chunkType";
 import Button from "../button/button";
 import {ButtonVariants} from "../button/buttonVariants";
 import ChunkImage from "./chunks/chunk-image/chunk-image";
+import {chunkType} from "./chunkType";
 
 type propsType = {
     className?: string,
@@ -15,10 +15,7 @@ type propsType = {
 type stateType = {}
 
 const EditorComponent = (props: propsType) => {
-    const classNames = props.className ? `EditorComponent ${props.className}` : "EditorComponent";
-
-
-
+    const classNames = props.className ? `${styles.editorComponent} ${props.className}` : styles.editorComponent;
 
     function Cmp(){
         switch (props.chunk.type) {
@@ -82,8 +79,8 @@ const EditorComponent = (props: propsType) => {
 
 
     return (
-       <div className="editor-component">
-           <div className="sideControls">
+       <div className={styles.editorComponent}>
+           <div className={styles.sideControls}>
                <Button variant={ButtonVariants.SECONDARY} onClick={props.removeCallback.bind(null, props.chunk)}>
                    Remove
                </Button>

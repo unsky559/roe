@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./code.scss";
+import styles from "./code.module.scss";
 import CodeIcon from "../codeIcon/codeIcon";
 import {iconType} from "../codeIcon/icon.type";
 
@@ -11,18 +11,19 @@ type stateType = {}
 
 const Code = (props: propsType) => {
     return (
-        <div className="code-fragment">
+        <div className={styles.codeFragment}>
             {props.icon ?
                 <CodeIcon icon={props.icon} tabbed/> :
                 <></>
             }
-            <div className={props.icon ? "code tabbed" : "code"}>
-                <div className="line">{`<h1>Hello world!</h1>`}</div>
-                <div className="line">{`<p>`}</div>
-                <div className="tab">
-                    <div className="line">This is a tab test</div>
+
+            <div className={props.icon ? (styles.code + " " + styles.tabbed) : styles.code}>
+                <div className={styles.line}>{`<h1>Hello world!</h1>`}</div>
+                <div className={styles.line}>{`<p>`}</div>
+                <div className={styles.tab}>
+                    <div className={styles.line}>This is a tab test</div>
                 </div>
-                <div className="line">{`</p>`}</div>
+                <div className={styles.line}>{`</p>`}</div>
             </div>
         </div>
     );

@@ -2,17 +2,17 @@
 @import "src/style-mixins/theme.fonts";
 @import "src/style-mixins/theme.border-radius";
 
-
-.article-preview{
+.articlePreview{
   padding: 40px;
   background-color: $color-main-interactive;
   color: $color-text-negative;
   border-radius: $border-radius-default;
   margin-bottom: 20px;
-  &_date{
+  &Date{
     @include font_small-content();
   }
-  &_title{
+  &Title{
     @include font_h2();
+    color: $color-text-negative;
   }
 }

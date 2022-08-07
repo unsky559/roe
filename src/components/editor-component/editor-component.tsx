@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import styles from "./editor-component.module.scss";
 import {componentTypes} from "./componentTypes";
 import Button from "../button/button";
@@ -15,6 +15,8 @@ type propsType = {
 type stateType = {}
 
 const EditorComponent = (props: propsType) => {
+    const ref = useRef();
+    const [focusState, updateFocusState] = useState(false);
     const classNames = props.className ? `${styles.editorComponent} ${props.className}` : styles.editorComponent;
 
     function Cmp(){
@@ -78,8 +80,23 @@ const EditorComponent = (props: propsType) => {
     }
 
 
+    const onFocus = () => {
+        updateFocusState(true);
+    }
+
+    const onBlur = () => {
+        updateFocusState(false);
+    }
+
+    useEffect(() => {
+        window.addEventListener("click", onBlur);
+        return () => {
+            window.removeEventListener("click", onBlur);
+        }
+    }, []);
+
     return (
-       <div className={styles.editorComponent}>
+       <div ref={ref} onClick={onFocus} className={styles.editorComponent}>
            <div className={styles.sideControls}>
                <Button variant={ButtonVariants.SECONDARY} onClick={props.removeCallback.bind(null, props.chunk)}>
                    Remove

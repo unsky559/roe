@@ -9,12 +9,15 @@
   ],
   "scripts": {
     "start": "npm run start -w back",
-    "build": "npm run build:prod --workspaces"
+    "build": "npm run build:prod --workspaces",
+    "front-w": "npm run serve -w front",
+    "back-w": "npm run watch -w back"
   },
   "author": "unsky559",
   "license": "ISC",
   "devDependencies": {
     "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "concurrently": "^7.3.0"
   }
 }

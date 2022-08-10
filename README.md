@@ -8,8 +8,18 @@ goog.men project
 
 ## Development and build
 
-See https://github.com/unsky559/roe/wiki/Development-and-build
+```shell
+npm run start
+```
 
-## Wiki
-All instructions about installing, contributing, naming and so on are moved into a wiki pages:
-see https://github.com/unsky559/roe/wiki
+```shell
+npm run build
+```
+
+```shell
+npm run front-w
+```
+
+```shell
+npm run back-w
+```

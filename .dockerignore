@@ -1,0 +1,6 @@
+node_modules
+npm-debug.log
+back/dist
+back/public
+# Cache used by TypeScript's incremental build
+*.tsbuildinfo

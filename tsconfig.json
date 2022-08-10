@@ -1,12 +1,10 @@
 {
+  "extends": "./node_modules/@loopback/build/config/tsconfig.common.json",
   "compilerOptions": {
-    "outDir": "./dist/",
-    "noImplicitAny": true,
-    "module": "es6",
-    "target": "es5",
-    "jsx": "react",
-    "allowJs": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true
-  }
+    "outDir": "dist",
+    "rootDir": "src"
+  },
+  "include": [
+    "src"
+  ]
 }

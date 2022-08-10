@@ -8,12 +8,14 @@ module.exports = {
 	},
 	output: {
 		filename: 'bundle.js',
-		path: path.resolve(__dirname, 'dist')
+		path: path.resolve(__dirname, '../back/public')
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
 			  title: 'roe',
         template: "index.html",
+        inject: 'head',
+        publicPath: "/"
     }),
 	],
   module: {

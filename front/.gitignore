@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.idea/
+
+src/components/editor-formatter/editor-formatter.module.scss
+editor-formatter.tsx
+editor-formatter-buttonsTpees.ts
+select.ts

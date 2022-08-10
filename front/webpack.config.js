@@ -14,6 +14,8 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			  title: 'roe',
         template: "index.html",
+        inject: 'head',
+        publicPath: "/"
     }),
 	],
   module: {
